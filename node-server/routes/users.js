@@ -1,11 +1,17 @@
-var express = require('express')
+var express = require('express');
 var router = express.Router();
-var PC_APP = require('../react/PC_App')
-var ReactServer = require('react-dom/server')
+var PC_APP = require('../react/PC_App');
+var ReactServer = require('react-dom/server');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('pc/views/index', { title: 'PC-HelloWorld', appHtml:ReactServer.renderToString('<PC_APP/>')});
+  res.render(
+      'pc/views/index',
+      {
+          title: 'PC-HelloWorld',
+          appHtml: ReactServer.renderToString('<PC_APP/>')
+      }
+      );
   // res.send(renderFullPage(ReactServer.renderToString('<PC_APP/>')))
 });
 
